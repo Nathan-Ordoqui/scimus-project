@@ -1,0 +1,17 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "@google-cloud/storage": "^2.4.2",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "deploy": "gcloud app deploy"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}

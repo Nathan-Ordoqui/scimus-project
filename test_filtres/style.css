@@ -1,0 +1,13 @@
+.dropdown-toggle{
+	margin: 5px;
+}
+
+#play_button{
+	width:50%;
+	margin:5px;
+}
+
+#stop_button{
+	width:50%;
+	margin:5px;
+}

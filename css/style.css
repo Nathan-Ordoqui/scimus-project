@@ -1,0 +1,11 @@
+.instructions{
+	margin-bottom: 30px;
+}
+
+.locked{
+	background-color: grey;
+}
+
+.unlocked{
+	background-color: #007bff;
+}

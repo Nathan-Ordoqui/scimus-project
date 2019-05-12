@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.4/Pizzicato.js"></script>
+
+    <script>var session_id = "<%= session_id %>";var sample_id = "<%= sample_id %>";</script>
+
+    <script type="text/javascript" src="test_filtres/filters.js"></script>
+    <script type="text/javascript" src="js/order.js"></script>
+	<script type="text/javascript" src="js/autoplay.js"></script>
+	<script type="text/javascript" src="js/post.js"></script>
+	<title>Rate filters</title>
+</head>
+<body>
+<div class="container instructions">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1>Scimus - Filters</h1>
+			<p>Please rate the following sounds according to the given aspects. Each sound lasts 15 seconds. The rating scales go from -3 (not at all) to 3 (very). It takes approximately 30 minutes to complete the test. Please use headphones or good quality speakers in a quiet sound environnement. Thank you in advance for your participation.</p>
+		</div>
+	</div>
+</div>
+
+<div id="rateform">
+	<div class="container instructions">
+		<div class="row">
+			<div class="col-sm-4">
+				<button type="button" class="btn btn-primary btn-lg" id="play_button" onclick="play_sample();">Play</button>
+			</div>
+			
+			<div class="col-sm-4">
+				<input class="btn btn-primary btn-lg locked" type="submit" value="Next" id="submit">
+			</div>
+			<div class="col-sm-4">
+				<h3><%= sample_id %>/64</h3>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<h3 class="col-sm-4 offset-sm-4">Relaxing</h1>
+		</div>
+		<div class="row">
+			<p class="col-sm-4">Not relaxing at all</p>
+			<div class="slidecontainer col-sm-4">
+			  <input type="range" min="1" max="7" value="4" class="slider" id="criter1">
+			</div>
+			<p class="col-sm-4">Very relaxing</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h3 class="col-sm-4 offset-sm-4">Motivating</h1>
+		</div>
+		<div class="row">
+			<p class="col-sm-4">Not motivating at all</p>
+			<div class="slidecontainer col-sm-4">
+			  <input type="range" min="1" max="7" value="4" class="slider" id="criter2">
+			</div>
+			<p class="col-sm-4">Very motivating</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h3 class="col-sm-4 offset-sm-4">Aggressive</h1>
+		</div>
+		<div class="row">
+			<p class="col-sm-4">Not aggressive at all</p>
+			<div class="slidecontainer col-sm-4">
+			  <input type="range" min="1" max="7" value="4" class="slider" id="criter3">
+			</div>
+			<p class="col-sm-4">Very aggressive</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h3 class="col-sm-4 offset-sm-4">Familiarity</h1>
+		</div>
+		<div class="row">
+			<p class="col-sm-4">Strange</p>
+			<div class="slidecontainer col-sm-4">
+			  <input type="range" min="1" max="7" value="4" class="slider" id="criter4">
+			</div>
+			<p class="col-sm-4">Familiar</p>
+		</div>
+	</div>
+
+	<div class="container instructions">
+		<div class="row">
+			<h3 class="col-sm-4 offset-sm-4">Harmony</h1>
+		</div>
+		<div class="row">
+			<p class="col-sm-4">Cacophonous</p>
+			<div class="slidecontainer col-sm-4">
+			  <input type="range" min="1" max="7" value="4" class="slider" id="criter5">
+			</div>
+			<p class="col-sm-4">Harmonious</p>
+		</div>
+	</div>
+	
+	<div class="container instructions">
+		<div class="row">
+			<h3 class="col-sm-6">Comments (optional)</h1>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+			 	<textarea rows="4" cols="50" name="comment" id="comments"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+</body>
+</html>
